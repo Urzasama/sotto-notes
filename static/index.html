@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark" />
+  <title>sotto - speech to notes</title>
+  <link rel="icon" href="/favicon.ico" type="image/svg+xml" />
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand" id="brand">
+        <div class="mark" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="brand-text">
+          <h1>sotto</h1>
+          <p>speech &rarr; notes</p>
+        </div>
+      </div>
+
+      <button class="new-btn" id="new-note" type="button">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" /></svg>
+        New note
+      </button>
+
+      <div class="library-head">
+        <span>Library</span>
+        <span class="count" id="library-count">0</span>
+      </div>
+      <nav class="library" id="library" aria-label="Saved notes"></nav>
+
+      <div class="sidebar-foot">
+        <div class="local-badge"><span class="dot"></span> local &middot; 127.0.0.1</div>
+        <p class="engine" id="engine-line">checking engines&hellip;</p>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div class="crumb">notebook <span>/</span> <strong id="crumb-title">new note</strong></div>
+        <div class="status" id="save-status"><span class="status-dot"></span><span id="save-status-text">ready</span></div>
+      </header>
+      <section class="view" id="view" aria-live="polite"></section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status"></div>
+  <input id="file-input" type="file" accept=".mp3,.wav,.m4a,.mp4,.ogg,.opus,.flac,.webm,.aac,audio/*" hidden />
+  <script src="/static/app.js"></script>
+</body>
+</html>
